@@ -1,0 +1,347 @@
+/**
+ * GigManager — Front-end styles.
+ *
+ * @since 1.0.0
+ */
+
+/* ==========================================================================
+   List template
+   ========================================================================== */
+
+.gigmanager-list {
+	margin: 1.5em 0;
+}
+
+.gigmanager-show {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 0.5em 1.5em;
+	padding: 0.75em 0;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.gigmanager-show:first-child {
+	border-top: 1px solid #e0e0e0;
+}
+
+.gigmanager-show__date {
+	flex: 0 0 auto;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.gigmanager-show__time {
+	margin-left: 0.5em;
+	font-weight: 400;
+	color: #666;
+}
+
+.gigmanager-show__details {
+	flex: 1 1 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25em 0.75em;
+	align-items: baseline;
+}
+
+.gigmanager-show__artist {
+	font-weight: 600;
+}
+
+.gigmanager-show__venue a,
+.gigmanager-show__artist a {
+	text-decoration: none;
+}
+
+.gigmanager-show__venue a:hover,
+.gigmanager-show__artist a:hover {
+	text-decoration: underline;
+}
+
+.gigmanager-show__city::before {
+	content: "\2014\00a0";
+}
+
+.gigmanager-show__country::before {
+	content: ",\00a0";
+}
+
+.gigmanager-show__tour {
+	color: #666;
+	font-style: italic;
+}
+
+.gigmanager-show__status {
+	display: inline-block;
+	padding: 0.1em 0.5em;
+	border-radius: 3px;
+	font-size: 0.85em;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+.gigmanager-show__status--cancelled {
+	background: #facfd2;
+	color: #8a1116;
+}
+
+.gigmanager-show__status--sold_out {
+	background: #fef0c7;
+	color: #93370d;
+}
+
+.gigmanager-show__actions {
+	flex: 0 0 auto;
+	display: flex;
+	gap: 0.5em;
+}
+
+/* Cancelled/sold-out show styling */
+.gigmanager-show--cancelled .gigmanager-show__date,
+.gigmanager-show--cancelled .gigmanager-show__details {
+	opacity: 0.6;
+}
+
+.gigmanager-show--cancelled .gigmanager-show__artist {
+	text-decoration: line-through;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.gigmanager-btn {
+	display: inline-block;
+	padding: 0.35em 0.85em;
+	border: 1px solid currentColor;
+	border-radius: 3px;
+	font-size: 0.85em;
+	font-weight: 600;
+	text-decoration: none;
+	white-space: nowrap;
+	transition: background 0.15s ease, color 0.15s ease;
+}
+
+.gigmanager-btn:hover {
+	text-decoration: none;
+}
+
+.gigmanager-btn--ticket {
+	background: #1d2327;
+	border-color: #1d2327;
+	color: #fff;
+}
+
+.gigmanager-btn--ticket:hover {
+	background: #3c434a;
+	border-color: #3c434a;
+	color: #fff;
+}
+
+.gigmanager-btn--external {
+	background: transparent;
+	color: #1d2327;
+}
+
+.gigmanager-btn--external:hover {
+	background: #1d2327;
+	color: #fff;
+}
+
+/* ==========================================================================
+   Table template
+   ========================================================================== */
+
+.gigmanager-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 1.5em 0;
+}
+
+.gigmanager-table th {
+	text-align: left;
+	padding: 0.5em 0.75em;
+	border-bottom: 2px solid #1d2327;
+	font-weight: 600;
+	font-size: 0.9em;
+}
+
+.gigmanager-table td {
+	padding: 0.5em 0.75em;
+	border-bottom: 1px solid #e0e0e0;
+	vertical-align: middle;
+}
+
+.gigmanager-table tbody tr:hover {
+	background: #f9f9f9;
+}
+
+.gigmanager-table a {
+	text-decoration: none;
+}
+
+.gigmanager-table a:hover {
+	text-decoration: underline;
+}
+
+/* ==========================================================================
+   Classic template
+   ========================================================================== */
+
+.gigmanager-classic,
+.gigmanager-classic th,
+.gigmanager-classic td {
+	border-collapse: collapse;
+	border-style: none;
+	border-width: 0;
+}
+.gigmanager-classic {
+	border-top: 1px solid #ccc;
+	width: 100%;
+}
+.gigmanager-classic th,
+.gigmanager-classic td {
+	border-bottom: 1px solid #ccc;
+	padding: 6px 8px;
+}
+.gigmanager-classic__top-row td {
+	border-bottom-color: #eee;
+}
+.gigmanager-classic__tour-row td {
+	background-color: #eee;
+	font-weight: bold;
+}
+.gigmanager-classic .gigmanager-classic__divider td {
+	border-top: 2px solid #ccc;
+}
+.gigmanager-classic__row--tour td {
+	background-color: #f6f6f6;
+}
+td.gigmanager-classic__notes {
+	color: #333;
+	font-size: 0.9em;
+}
+.gigmanager-classic .label {
+	color: #666;
+}
+/* ==========================================================================
+   Widget
+   ========================================================================== */
+
+.gigmanager-widget {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gigmanager-widget__show {
+	padding: 0.5em 0;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.gigmanager-widget__show:last-child {
+	border-bottom: none;
+}
+
+.gigmanager-widget__date {
+	display: block;
+	font-weight: 600;
+	font-size: 0.9em;
+}
+
+.gigmanager-widget__time {
+	margin-left: 0.4em;
+	font-weight: 400;
+	color: #666;
+}
+
+.gigmanager-widget__artist {
+	display: block;
+}
+
+.gigmanager-widget__artist a {
+	text-decoration: none;
+}
+
+.gigmanager-widget__artist a:hover {
+	text-decoration: underline;
+}
+
+.gigmanager-widget__venue {
+	display: block;
+	font-size: 0.9em;
+	color: #555;
+}
+
+.gigmanager-widget__venue a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.gigmanager-widget__venue a:hover {
+	text-decoration: underline;
+}
+
+.gigmanager-widget__city::before {
+	content: "\2014\00a0";
+}
+
+.gigmanager-widget__country::before {
+	content: ",\00a0";
+}
+
+.gigmanager-widget__status {
+	display: inline-block;
+	padding: 0.1em 0.4em;
+	border-radius: 3px;
+	font-size: 0.8em;
+	font-weight: 600;
+}
+
+.gigmanager-widget__ticket {
+	display: inline-block;
+	margin-top: 0.25em;
+	font-size: 0.85em;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.gigmanager-widget__ticket:hover {
+	text-decoration: underline;
+}
+
+.gigmanager-widget__show--cancelled .gigmanager-widget__artist {
+	text-decoration: line-through;
+	opacity: 0.6;
+}
+
+/* ==========================================================================
+   No results
+   ========================================================================== */
+
+.gigmanager-no-shows {
+	margin: 1.5em 0;
+	color: #666;
+	font-style: italic;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 600px) {
+	.gigmanager-show {
+		flex-direction: column;
+		gap: 0.25em;
+	}
+
+	.gigmanager-show__actions {
+		margin-top: 0.5em;
+	}
+
+	.gigmanager-table {
+		display: block;
+		overflow-x: auto;
+	}
+}

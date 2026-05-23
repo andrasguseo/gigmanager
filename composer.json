@@ -1,0 +1,31 @@
+{
+  "name": "andras-guseo/gigmanager",
+  "minimum-stability": "stable",
+  "type": "wordpress-plugin",
+  "authors": [
+    {
+      "name": "Andras",
+      "email": "hello@andrasguseo.com"
+    }
+  ],
+  "prefer-stable": true,
+  "config": {
+    "preferred-install": "dist",
+    "platform": {
+      "php": "8.0"
+    },
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "AGU\\GigManager\\": "src/GigManager"
+    }
+  },
+  "require-dev": {
+    "php": ">=8.0",
+    "lucatume/wp-browser": "^4.5",
+    "automattic/vipwpcs": "^3.0"
+  }
+}

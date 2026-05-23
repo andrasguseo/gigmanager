@@ -1,0 +1,21 @@
+post_id,date,time,artist_slug,venue_name,venue_city,tour_slug,performance_status,price,ticket_url,ticket_phone,external_url,notes
+,2026-04-05,20:00,the-midnight-waves,The Blue Note,New York,,,$25,https://tickets.example.com/mw-apr5,,,
+,2026-04-12,21:00,julia-verne,Roundhouse,London,,,GBP 20,,,https://juliaverne.example.com/tour,Solo acoustic set
+,2026-04-18,19:30,echo-chamber,Szimpla Kert,Budapest,,,HUF 5000,,,,
+,2026-04-25,20:30,the-midnight-waves,Roundhouse,London,,,GBP 25,https://tickets.example.com/mw-apr25,,,
+,2026-05-02,21:00,julia-verne,The Blue Note,New York,,,$30,https://tickets.example.com/jv-may2,,,
+,2026-05-09,20:00,echo-chamber,The Blue Note,New York,,cancelled,,,,,"Show cancelled due to scheduling conflict"
+,2026-05-16,19:00,the-midnight-waves,Szimpla Kert,Budapest,,,HUF 4500,https://tickets.example.com/mw-may16,,,
+,2026-05-23,20:30,julia-verne,Szimpla Kert,Budapest,,,HUF 6000,,,https://juliaverne.example.com/budapest,
+,2026-05-30,21:00,echo-chamber,Roundhouse,London,,,GBP 22,https://tickets.example.com/ec-may30,,,
+,2026-06-06,20:00,the-midnight-waves,The Blue Note,New York,,sold_out,$25,https://tickets.example.com/mw-jun6,,,
+,2026-06-13,19:30,julia-verne,Roundhouse,London,,,GBP 30,https://tickets.example.com/jv-jun13,,,Album release show
+,2026-06-20,21:00,echo-chamber,Szimpla Kert,Budapest,,,HUF 5000,https://tickets.example.com/ec-jun20,,,
+,2026-06-27,20:00,the-midnight-waves,Roundhouse,London,,,GBP 25,https://tickets.example.com/mw-jun27,,,
+,2026-07-04,20:30,julia-verne,The Blue Note,New York,,,$35,https://tickets.example.com/jv-jul4,+1-212-475-8592,,Independence Day special
+,2026-07-11,19:00,echo-chamber,The Blue Note,New York,,,Free,,,,Surprise opening act TBA
+,2026-07-18,21:00,the-midnight-waves,Szimpla Kert,Budapest,,,HUF 4500,https://tickets.example.com/mw-jul18,,,
+,2026-07-25,20:00,julia-verne,Szimpla Kert,Budapest,,cancelled,,,,,"Cancelled — artist illness"
+,2026-08-01,20:30,echo-chamber,Roundhouse,London,,,GBP 22,https://tickets.example.com/ec-aug1,,,
+,2026-08-08,19:30,the-midnight-waves,The Blue Note,New York,,,$25,https://tickets.example.com/mw-aug8,+1-212-475-8592,,Final show of the season
+,2026-08-15,21:00,julia-verne,Roundhouse,London,,,GBP 28,https://tickets.example.com/jv-aug15,,,

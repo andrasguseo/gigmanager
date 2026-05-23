@@ -1,0 +1,71 @@
+.gigmanager-meta-table .required {
+	color: #d63638;
+	font-weight: 700;
+}
+
+.gigmanager-badge {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 3px;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+.gigmanager-badge--cancelled {
+	background: #facfd2;
+	color: #8a1116;
+}
+
+.gigmanager-badge--sold-out {
+	background: #fef0c7;
+	color: #93370d;
+}
+
+/* Dashboard widget checklist */
+.gigmanager-dashboard-checklist {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.gigmanager-dashboard-checklist li {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 4px 0;
+}
+
+.gigmanager-dashboard-checklist li.is-complete {
+	color: #00a32a;
+}
+
+.gigmanager-dashboard-checklist .dashicons {
+	font-size: 16px;
+	width: 16px;
+	height: 16px;
+}
+
+/* Welcome / Onboarding screen */
+.gigmanager-welcome__checklist {
+	max-width: 500px;
+	padding-left: 0;
+	list-style: none;
+	counter-reset: none;
+}
+
+.gigmanager-welcome__checklist li {
+	padding: 8px 0;
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.gigmanager-welcome__checklist li.is-complete {
+	color: #00a32a;
+}
+
+.gigmanager-welcome__checklist li.is-complete .dashicons {
+	color: #00a32a;
+}
