@@ -1,0 +1,1091 @@
+# Copyright (C) 2026 Andras Guseo
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: GigManager 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/gigmanager\n"
+"POT-Creation-Date: 2026-05-23T13:09:23+00:00\n"
+"PO-Revision-Date: 2026-05-26 19:06+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: hu_HU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+"X-Domain: gigmanager\n"
+
+#. Plugin Name of the plugin
+#: gigmanager.php src/GigManager/CPT/CPT_Registry.php:213
+#: src/GigManager/CPT/CPT_Registry.php:214
+msgid "GigManager"
+msgstr "GigManager"
+
+#. Description of the plugin
+#: gigmanager.php
+msgid "Manage and display live music shows, artists, venues, and tours."
+msgstr ""
+"Élő zenei koncertek, előadók, helyszínek és turnék kezelése és megjelenítése."
+
+#. Author of the plugin
+#: gigmanager.php
+msgid "Andras Guseo"
+msgstr "András Guseo"
+
+#. Author URI of the plugin
+#: gigmanager.php
+msgid "https://andrasguseo.com"
+msgstr "https://andrasguseo.com"
+
+#: src/GigManager/Admin/Artist_List.php:42
+#: src/GigManager/Admin/Venue_List.php:44
+msgid "Website"
+msgstr "Weboldal"
+
+#: src/GigManager/Admin/Dashboard_Widget.php:68
+msgid "GigManager — Quick Start"
+msgstr "GigManager — Repülő rajt"
+
+#: src/GigManager/Admin/Dashboard_Widget.php:86
+#: src/GigManager/Admin/Onboarding.php:174
+#: src/GigManager/Admin/Onboarding.php:178
+msgid "Add an Artist"
+msgstr "Előadő hozzáadása"
+
+#: src/GigManager/Admin/Dashboard_Widget.php:91
+#: src/GigManager/Admin/Onboarding.php:185
+#: src/GigManager/Admin/Onboarding.php:189
+msgid "Add a Venue"
+msgstr "Helyszín hozzáadása"
+
+#: src/GigManager/Admin/Dashboard_Widget.php:96
+#: src/GigManager/Admin/Onboarding.php:196
+#: src/GigManager/Admin/Onboarding.php:200
+msgid "Add a Show"
+msgstr "Előadás hozzáadása"
+
+#: src/GigManager/Admin/Dashboard_Widget.php:101
+#: src/GigManager/Admin/Onboarding.php:208
+msgid "View your Shows page"
+msgstr "Előadás oldal megtekintése"
+
+#. translators: %1$d: completed steps, %2$d: total steps
+#: src/GigManager/Admin/Dashboard_Widget.php:125
+#, php-format
+msgid "%1$d of %2$d steps complete"
+msgstr "%1$d/%2$d lépés elkészült"
+
+#: src/GigManager/Admin/Import_Export.php:71
+#: src/GigManager/Admin/Import_Export.php:72
+#: src/GigManager/Admin/Import_Export.php:91
+msgid "Import / Export"
+msgstr "Import / Export"
+
+#: src/GigManager/Admin/Import_Export.php:98
+msgid "Import"
+msgstr "Importálás"
+
+#: src/GigManager/Admin/Import_Export.php:104
+msgid "Export"
+msgstr "Exportálás"
+
+#: src/GigManager/Admin/Import_Export.php:133
+#: src/GigManager/Admin/Import_Export.php:170
+#: src/GigManager/Admin/Import_Export.php:204
+msgid "Entity Type"
+msgstr "Adat típus"
+
+#: src/GigManager/Admin/Import_Export.php:136
+#: src/GigManager/Admin/Import_Export.php:176
+#: src/GigManager/Admin/Import_Export.php:226
+#: src/GigManager/Admin/Onboarding.php:73
+#: src/GigManager/CPT/CPT_Registry.php:62
+#: src/GigManager/CPT/CPT_Registry.php:63
+#: src/GigManager/Shortcode/Shows.php:486
+msgid "Shows"
+msgstr "Előadások"
+
+#: src/GigManager/Admin/Import_Export.php:137
+#: src/GigManager/Admin/Import_Export.php:173
+#: src/GigManager/Admin/Import_Export.php:211
+#: src/GigManager/CPT/CPT_Registry.php:105
+#: src/GigManager/CPT/CPT_Registry.php:106
+msgid "Artists"
+msgstr "Előadók"
+
+#: src/GigManager/Admin/Import_Export.php:138
+#: src/GigManager/Admin/Import_Export.php:174
+#: src/GigManager/Admin/Import_Export.php:216
+#: src/GigManager/CPT/CPT_Registry.php:143
+#: src/GigManager/CPT/CPT_Registry.php:144
+msgid "Venues"
+msgstr "Helyszínek"
+
+#: src/GigManager/Admin/Import_Export.php:139
+#: src/GigManager/Admin/Import_Export.php:175
+#: src/GigManager/Admin/Import_Export.php:221
+#: src/GigManager/CPT/CPT_Registry.php:181
+#: src/GigManager/CPT/CPT_Registry.php:182
+msgid "Tours"
+msgstr "Turnék"
+
+#: src/GigManager/Admin/Import_Export.php:145
+msgid "Download CSV"
+msgstr "CSV letöltése"
+
+#: src/GigManager/Admin/Import_Export.php:161
+msgid "Import artists and venues before importing shows."
+msgstr ""
+"Előbb az előadókat és a helyszíneket kell importálni az előadások előtt."
+
+#: src/GigManager/Admin/Import_Export.php:181
+msgid "CSV File"
+msgstr "CSV fájl"
+
+#: src/GigManager/Admin/Import_Export.php:185
+msgid ""
+"UTF-8 encoded, comma-delimited CSV with column headers in the first row."
+msgstr ""
+"UTF-8 kódolt, vesszővel elosztott CSV, oszlopfejlécekkel az első sorban."
+
+#: src/GigManager/Admin/Import_Export.php:191
+msgid "Import CSV"
+msgstr "CSV importálása"
+
+#: src/GigManager/Admin/Import_Export.php:198
+msgid "CSV Column Reference"
+msgstr "CSV oszlop referencia"
+
+#: src/GigManager/Admin/Import_Export.php:199
+msgid ""
+"The first row of your CSV must contain column headers. Column order does not "
+"matter. Bold columns are required."
+msgstr ""
+"A CSV első sorának oszlopfejléceket kell tartalmaznia. Az oszlopsorrend nem "
+"számít. A vastaggal szedett oszlopok kötelezőek."
+
+#: src/GigManager/Admin/Import_Export.php:205
+msgid "Columns"
+msgstr "Oszlopok"
+
+#: src/GigManager/Admin/Import_Export.php:206
+msgid "Duplicate Handling"
+msgstr "Duplikátumok kezelése"
+
+#: src/GigManager/Admin/Import_Export.php:213
+msgid "Matched by slug — existing artists are updated."
+msgstr ""
+"Az összehasonlítás alapja a slug — a meglévő művészek frissítésre kerülnek."
+
+#: src/GigManager/Admin/Import_Export.php:218
+msgid "Matched by slug — existing venues are updated."
+msgstr ""
+"Az összehasonlítás alapja a slug — a meglévő helyszínek frissítésre kerülnek."
+
+#: src/GigManager/Admin/Import_Export.php:223
+msgid "Matched by slug — existing tours are updated."
+msgstr ""
+"Az összehasonlítás alapja a slug — a meglévő turnék frissítésre kerülnek."
+
+#: src/GigManager/Admin/Import_Export.php:228
+msgid ""
+"Matched by post_id — existing shows are updated. Empty or missing post_id "
+"creates a new show."
+msgstr ""
+"Az összehasonlítás alapja a bejegyzés azonosító (post_id) — a meglévő "
+"műsorok frissítésre kerülnek. Üres vagy hiányzó azonosító esetén új műsor "
+"lesz létre hozva."
+
+#: src/GigManager/Admin/Import_Export.php:259
+msgid "Import Results"
+msgstr "Importálási eredmények"
+
+#. translators: %1$d: created count, %2$d: updated count, %3$d: skipped count
+#: src/GigManager/Admin/Import_Export.php:266
+#, php-format
+msgid "%1$d created, %2$d updated, %3$d skipped."
+msgstr "%1$d létrehozva, %2$d frissítve, %3$d átugorva."
+
+#: src/GigManager/Admin/Import_Export.php:279
+msgid "Row"
+msgstr "Sor"
+
+#: src/GigManager/Admin/Import_Export.php:280
+msgid "Error"
+msgstr "Hiba"
+
+#: src/GigManager/Admin/Import_Export.php:326
+msgid "Download Failed Rows"
+msgstr "Sikertelen sorok letöltése"
+
+#: src/GigManager/Admin/Import_Export.php:386
+msgid "File upload failed."
+msgstr "A fájlfeltöltés sikertelen volt."
+
+#: src/GigManager/Admin/Onboarding.php:119
+msgid "Welcome to GigManager"
+msgstr "Üdvözöl a GigManager"
+
+#: src/GigManager/Admin/Onboarding.php:139
+msgid "Welcome to GigManager!"
+msgstr "Üdvözöl a GigManager!"
+
+#: src/GigManager/Admin/Onboarding.php:142
+msgid ""
+"GigManager helps you manage and display live shows, artists, venues, and "
+"tours on your WordPress site."
+msgstr ""
+"A GigManager segítségével könnyedén kezelheted és jeleníthetsz meg "
+"koncerteket, előadókat, helyszíneket és turnékat a WordPress-oldaladon."
+
+#: src/GigManager/Admin/Onboarding.php:166
+msgid "Quick Start"
+msgstr "Repülő rajt"
+
+#: src/GigManager/Admin/Onboarding.php:168
+msgid "Follow these steps to get your first show listed:"
+msgstr "Kövessük ezeket a lépéseket, az első műsor felviteléhez:"
+
+#: src/GigManager/Admin/Onboarding.php:212
+msgid "View your Shows page (page will be created on next activation)"
+msgstr ""
+"A műsor oldal megtekintése (az oldal a következő aktiváláskor lesz létre "
+"hozva)"
+
+#: src/GigManager/Admin/Onboarding.php:219
+msgid "Go to Settings"
+msgstr "Ugrás a beállításokhoz"
+
+#. translators: 1: opening strong tag, 2: closing strong tag, 3: opening link to recreate page, 4: closing link tag, 5: opening link to settings page, 6: closing link tag
+#: src/GigManager/Admin/Onboarding.php:267
+#, php-format
+msgid ""
+"%1$sGigManager:%2$s Your Shows page has been deleted. %3$sRecreate it%4$s or "
+"select a different page in %5$sSettings%6$s."
+msgstr ""
+"%1$sGigManager:%2$s A műsor oldal törölve lett. %3$sHozzuk újra létre%4$s "
+"vagy válasszunk egy másik oldalt a %5$sBeállítások%6$s menüben."
+
+#: src/GigManager/Admin/Settings.php:52 src/GigManager/Admin/Settings.php:53
+#: src/GigManager/Admin/Settings.php:702
+msgid "Settings"
+msgstr "Beállítások"
+
+#: src/GigManager/Admin/Settings.php:158
+msgid "General"
+msgstr "Általános"
+
+#: src/GigManager/Admin/Settings.php:159
+msgid "Labels"
+msgstr "Feliratok"
+
+#: src/GigManager/Admin/Settings.php:160
+msgid "Help"
+msgstr "Segítség"
+
+#: src/GigManager/Admin/Settings.php:165
+msgid "GigManager Settings"
+msgstr "GigManager beállítások"
+
+#: src/GigManager/Admin/Settings.php:170
+msgid "Your sticky defaults have been cleared."
+msgstr "A ragadós alapértelmezéseid törölve lettek."
+
+#: src/GigManager/Admin/Settings.php:177
+msgid "Your Shows page has been recreated."
+msgstr "A műsor oldal létre lett hozva."
+
+#: src/GigManager/Admin/Settings.php:234
+msgid "Shows Page"
+msgstr "Műsor oldal"
+
+#: src/GigManager/Admin/Settings.php:243
+msgid "— Select a page —"
+msgstr "— Válasszunk egy oldalt —"
+
+#: src/GigManager/Admin/Settings.php:249
+msgid "The selected page no longer exists. Please choose a new page."
+msgstr "A kiválasztott oldal már nem létezik. Válasszunk új oldalt."
+
+#: src/GigManager/Admin/Settings.php:254
+msgid ""
+"The Upcoming Shows widget can link to this page. Add a shortcode to this "
+"page to display your full show listing."
+msgstr ""
+"A „Közelgő előadások” modul hivatkozhat erre az oldalra. Helyezzünk el egy "
+"gyorskódot ezen az oldalon, hogy megjelenjen a teljes előadás lista."
+
+#: src/GigManager/Admin/Settings.php:260
+msgid "Display Country on Venue"
+msgstr "Ország megjelenítése a helyszínnél"
+
+#: src/GigManager/Admin/Settings.php:267 src/GigManager/Admin/Settings.php:289
+#: src/GigManager/Admin/Settings.php:308 src/GigManager/Admin/Settings.php:327
+msgid "Yes"
+msgstr "Igen"
+
+#: src/GigManager/Admin/Settings.php:273 src/GigManager/Admin/Settings.php:295
+#: src/GigManager/Admin/Settings.php:314 src/GigManager/Admin/Settings.php:333
+msgid "No"
+msgstr "Nem"
+
+#: src/GigManager/Admin/Settings.php:276
+msgid ""
+"Useful for international touring acts. Local performers can turn this off to "
+"reduce clutter."
+msgstr ""
+"Hasznos nemzetközi turnék esetén. A helyi előadók kikapcsolhatják ezt a "
+"funkciót, hogy csökkentsék a zavaró elemeket."
+
+#: src/GigManager/Admin/Settings.php:282
+msgid "Artist Name Links to URL"
+msgstr "Az előadó neve mutasson az URL-re"
+
+#: src/GigManager/Admin/Settings.php:301
+msgid "Venue Name Links to URL"
+msgstr "Az helyszín neve mutasson az URL-re"
+
+#: src/GigManager/Admin/Settings.php:320
+msgid "Enable Sticky Defaults"
+msgstr "Ragadós alapértelmezett értékek bekapcsolása"
+
+#: src/GigManager/Admin/Settings.php:336
+msgid ""
+"When enabled, the Artist, Venue, and Tour fields are pre-filled with the "
+"values from your last new show."
+msgstr ""
+"Ha be van kapcsolva, az előadó, a helyszín és a túra mezők előre ki lesznek "
+"töltve a legutóbbi új előadás értékeivel."
+
+#: src/GigManager/Admin/Settings.php:347
+msgid "Clear your default Artist, Venue, and Tour? This cannot be undone."
+msgstr ""
+"Töröljük az alapértelmezett előadót, helyszínt és turnét? A műveletet nem "
+"lehet visszafordítani."
+
+#: src/GigManager/Admin/Settings.php:349
+msgid "Click here to clear your defaults."
+msgstr "Kattintsunk ide az alapértelmezett értékek törléséhez."
+
+#: src/GigManager/Admin/Settings.php:358
+msgid "Onboarding"
+msgstr "Kezdő lépések"
+
+#: src/GigManager/Admin/Settings.php:365
+msgid "View Welcome Screen"
+msgstr "Üdvözlő képernyő megtekintése"
+
+#: src/GigManager/Admin/Settings.php:384
+msgid ""
+"These labels are used on the front end only. Admin labels are not affected."
+msgstr ""
+"Ezek a címkék csak a látogatói oldalakon lesznek használva. Az "
+"adminisztrációs felületet nem érinti."
+
+#: src/GigManager/Admin/Settings.php:432
+msgid "Show (singular)"
+msgstr "Előadás (egyes szám)"
+
+#: src/GigManager/Admin/Settings.php:436
+msgid "Show (plural)"
+msgstr "Előadás (többes szám)"
+
+#: src/GigManager/Admin/Settings.php:440
+msgid "Artist (singular)"
+msgstr "Előadó (egyes szám)"
+
+#: src/GigManager/Admin/Settings.php:444
+msgid "Artist (plural)"
+msgstr "Előadó (többes szám)"
+
+#: src/GigManager/Admin/Settings.php:448
+msgid "Tour (singular)"
+msgstr "Turné (egyes szám)"
+
+#: src/GigManager/Admin/Settings.php:452
+msgid "Tour (plural)"
+msgstr "Turné (többes szám)"
+
+#: src/GigManager/Admin/Settings.php:456
+msgid "Venue (singular)"
+msgstr "Helyszín (egyes szám)"
+
+#: src/GigManager/Admin/Settings.php:460
+msgid "Venue (plural)"
+msgstr "Helyszín (többes szám)"
+
+#: src/GigManager/Admin/Settings.php:464
+msgid "Ticket Button Label"
+msgstr "Jegy gomb felirat"
+
+#: src/GigManager/Admin/Settings.php:468
+msgid "External Link Button Label"
+msgstr "Külső hivatkozás gomb felirat"
+
+#: src/GigManager/Admin/Settings.php:472
+msgid "\"No Upcoming Shows\" Message"
+msgstr "\"Nincs közelgő előadás\" üzenet"
+
+#: src/GigManager/Admin/Settings.php:475
+msgid "Displayed when no shows match the current shortcode filter."
+msgstr ""
+"Akkor jelenik meg, amikor nincs a szűrő feltételeinek megfelelő előadás."
+
+#: src/GigManager/Admin/Settings.php:478
+msgid "\"No Past Shows\" Message"
+msgstr "\"Nincsenek múltbeli előadások\" üzenet"
+
+#: src/GigManager/Admin/Settings.php:494
+msgid "Support"
+msgstr "Támogatás"
+
+#. translators: 1: opening <a> tag, 2: closing </a> tag and external link icon
+#: src/GigManager/Admin/Settings.php:499
+#, php-format
+msgid ""
+"I'm happy to support you with bugs and issues through the %1$sofficial "
+"WordPress.org support forums of GigManager%2$s. Feel free to also submit "
+"feature requests there and if there is a high demand, it just might make it "
+"into the plugin."
+msgstr ""
+"Örömmel támogatlak a hibák és problémák megoldásában a %1$sGigManager "
+"hivatalos WordPress.org támogatási felületén%2$s. Bátran küldj be oda új "
+"funkciók iránti kéréseket is; ha elég nagy az érdeklődés, akkor azok akár be "
+"is kerülhetnek a bővítménybe."
+
+#. translators: 1: opening <a> tag, 2: closing </a> tag and external link icon, 3: opening <a> tag, 4: closing </a> tag and external link icon
+#: src/GigManager/Admin/Settings.php:509
+#, php-format
+msgid ""
+"In exchange, you can support me and my work by leaving a %1$sreview%2$s, by "
+"a %3$sdonation%4$s, or by spreading the word on social media."
+msgstr ""
+"Cserébe támogathatsz engem és a munkámat azzal, hogy %1$svéleményt írsz%2$s, "
+"%3$sadományt adsz%4$s, vagy terjeszted a hírt a közösségi médiában."
+
+#: src/GigManager/Admin/Settings.php:518
+msgid "Shortcode"
+msgstr "Gyorskód"
+
+#: src/GigManager/Admin/Settings.php:520
+msgid "Use the following shortcode to display shows on any page or post:"
+msgstr ""
+"Használjuk a következő gyorskódot a műsorok megjelenítéséhez bármely oldalon "
+"vagy bejegyzésben:"
+
+#: src/GigManager/Admin/Settings.php:523
+msgid "Attributes"
+msgstr "Attribútumok"
+
+#: src/GigManager/Admin/Settings.php:528
+msgid "Attribute"
+msgstr "Attribútum"
+
+#: src/GigManager/Admin/Settings.php:529
+msgid "Values"
+msgstr "Értékek"
+
+#: src/GigManager/Admin/Settings.php:530
+msgid "Default"
+msgstr "Alapértelmezett"
+
+#: src/GigManager/Admin/Settings.php:531
+msgid "Description"
+msgstr "Leírás"
+
+#: src/GigManager/Admin/Settings.php:539
+msgid "Which shows to display based on date."
+msgstr "Melyik előadásokat mutassa dátum alapján."
+
+#: src/GigManager/Admin/Settings.php:543
+msgid "Artist slug or ID"
+msgstr "Előadó slug vagy azonosító (ID)"
+
+#: src/GigManager/Admin/Settings.php:544
+msgid "(all artists)"
+msgstr "(minden előadó)"
+
+#: src/GigManager/Admin/Settings.php:545
+msgid "Filter shows by a specific artist."
+msgstr "Előadások szűrése egy adott előadó szerint."
+
+#: src/GigManager/Admin/Settings.php:549
+msgid "Number"
+msgstr "Szám"
+
+#: src/GigManager/Admin/Settings.php:550
+msgid "(no limit)"
+msgstr "(nincs korlát)"
+
+#: src/GigManager/Admin/Settings.php:551
+msgid "Maximum number of shows to display."
+msgstr "A megjelenítendő előadások maximális száma."
+
+#: src/GigManager/Admin/Settings.php:556
+msgid "ASC for upcoming/today/all, DESC for past"
+msgstr ""
+"Nővekvő (ASC) a közelgő/mai/összes előadás, csökkenő (DESC) az elmúlt "
+"előadások esetében."
+
+#: src/GigManager/Admin/Settings.php:557
+msgid "Sort direction by date."
+msgstr "Dátum szerinti rendezés iránya"
+
+#: src/GigManager/Admin/Settings.php:563
+msgid "Display template to use."
+msgstr "Használni kívánt sablon."
+
+#: src/GigManager/Admin/Settings.php:568
+msgid "Examples"
+msgstr "Példák"
+
+#: src/GigManager/Admin/Settings.php:573
+msgid "All upcoming shows in list format."
+msgstr "Minden közelgő előadás lista formátumban."
+
+#: src/GigManager/Admin/Settings.php:577
+msgid "Past shows in a table."
+msgstr "Multbéli előadások táblázat formátumban."
+
+#: src/GigManager/Admin/Settings.php:581
+msgid "Next 5 upcoming shows for a specific artist."
+msgstr "A következő 5 előadás egy adott előadótól."
+
+#: src/GigManager/Admin/Settings.php:585
+msgid "All shows, newest first, classic layout."
+msgstr "Minden műsor, először a legújabb, klasszikus formátumban."
+
+#: src/GigManager/Admin/Settings.php:592
+msgid "Templates"
+msgstr "Sablonok"
+
+#: src/GigManager/Admin/Settings.php:594
+msgid "Three built-in templates are available:"
+msgstr "Három beépített sablon érhető el:"
+
+#: src/GigManager/Admin/Settings.php:599
+msgid ""
+"Card-style layout with date, details, and action buttons. Best for modern "
+"themes."
+msgstr ""
+"Kártyaszerű elrendezés dátummal, részletekkel és műveleti gombokkal. "
+"Leginkább modern témákhoz ajánlott."
+
+#: src/GigManager/Admin/Settings.php:603
+msgid ""
+"Traditional data table with one row per show and sortable-style columns."
+msgstr ""
+"Hagyományos táblázat, amelyben minden műsor egy sorban szerepel, és az "
+"oszlopok rendezhetők."
+
+#: src/GigManager/Admin/Settings.php:607
+msgid "Two-row layout with show details on a second row."
+msgstr "Két soros elrendezés, a részletek a második sorban jelennek meg."
+
+#. translators: 1: plugin templates path, 2: theme override path
+#: src/GigManager/Admin/Settings.php:614
+#, php-format
+msgid ""
+"To customise templates, copy files from %1$s to %2$s. Your theme copies will "
+"take priority over the plugin defaults."
+msgstr ""
+"A sablonok testreszabásához a fájlokat a %1$s mappából a %2$s mappába kell "
+"másolni. A témához tartozó másolatok elsőbbséget élveznek a bővítmény "
+"alapértelmezett sablonjaihoz képest."
+
+#: src/GigManager/Admin/Settings.php:621
+msgid "Time Zones"
+msgstr "Időzónák"
+
+#: src/GigManager/Admin/Settings.php:624
+msgid ""
+"All shows use the site timezone (Settings → General → Timezone). For multi-"
+"timezone touring, add the timezone manually in the show's Notes field (e.g., "
+"\"8pm ET / 7pm CT\")."
+msgstr ""
+"Minden előadás a webhely időzónáját veszi alapul (Beállítások → Általános → "
+"Időzóna). Ha a turné több időzónára terjed ki, az időzónát kézzel kell "
+"megadni az előadás „Jegyzetek” mezőjében (pl. „20:00 ET / 19:00 CT”)."
+
+#: src/GigManager/Admin/Show_List.php:52
+msgid "Show Date"
+msgstr "Előadás dátuma"
+
+#: src/GigManager/Admin/Show_List.php:53 src/GigManager/Meta/Show_Meta.php:164
+#: templates/table.php:41
+msgid "Time"
+msgstr "Időpont"
+
+#: src/GigManager/Admin/Show_List.php:54 src/GigManager/Meta/Show_Meta.php:179
+#: src/GigManager/Shortcode/Shows.php:487
+msgid "Artist"
+msgstr "Előadó"
+
+#: src/GigManager/Admin/Show_List.php:55 src/GigManager/Meta/Show_Meta.php:214
+#: src/GigManager/Shortcode/Shows.php:488
+msgid "Venue"
+msgstr "Helyszín"
+
+#: src/GigManager/Admin/Show_List.php:56 src/GigManager/Meta/Show_Meta.php:254
+#: src/GigManager/Shortcode/Shows.php:489
+msgid "Tour"
+msgstr "Turné"
+
+#: src/GigManager/Admin/Show_List.php:57 templates/table.php:52
+msgid "Status"
+msgstr "Állapot"
+
+#: src/GigManager/Admin/Show_List.php:58
+msgid "Tickets"
+msgstr "Jegyek"
+
+#: src/GigManager/Admin/Show_List.php:158 src/GigManager/Meta/Show_Meta.php:284
+#: src/GigManager/Widget/Upcoming_Shows.php:204 templates/classic.php:131
+#: templates/list.php:67 templates/table.php:93
+msgid "Cancelled"
+msgstr "Lemondva"
+
+#: src/GigManager/Admin/Show_List.php:162 src/GigManager/Meta/Show_Meta.php:287
+#: src/GigManager/Widget/Upcoming_Shows.php:206 templates/classic.php:133
+#: templates/list.php:69 templates/table.php:95
+msgid "Sold Out"
+msgstr "Minden jegy elkelt"
+
+#: src/GigManager/Admin/Show_List.php:175
+msgid "Link"
+msgstr "Link"
+
+#: src/GigManager/Admin/Show_List.php:277
+msgid "All Artists"
+msgstr "Összes előadó"
+
+#: src/GigManager/Admin/Show_List.php:312
+msgid "All Tours"
+msgstr "Összes turné"
+
+#: src/GigManager/Admin/Venue_List.php:42
+#: src/GigManager/Meta/Venue_Meta.php:112 templates/classic.php:41
+#: templates/table.php:45
+msgid "City"
+msgstr "Település"
+
+#: src/GigManager/Admin/Venue_List.php:43
+#: src/GigManager/Meta/Venue_Meta.php:178
+msgid "Phone"
+msgstr "Telefon"
+
+#: src/GigManager/CPT/CPT_Registry.php:52
+msgctxt "post type general name"
+msgid "Shows"
+msgstr "Előadások"
+
+#: src/GigManager/CPT/CPT_Registry.php:53
+msgctxt "post type singular name"
+msgid "Show"
+msgstr "Előadások"
+
+#: src/GigManager/CPT/CPT_Registry.php:54
+#: src/GigManager/CPT/CPT_Registry.php:98
+#: src/GigManager/CPT/CPT_Registry.php:136
+#: src/GigManager/CPT/CPT_Registry.php:174
+msgid "Add New"
+msgstr "Új hozzáadása"
+
+#: src/GigManager/CPT/CPT_Registry.php:55
+msgid "Add New Show"
+msgstr "Új előadás hozzáadása"
+
+#: src/GigManager/CPT/CPT_Registry.php:56
+msgid "Edit Show"
+msgstr "Előadás szerkesztése"
+
+#: src/GigManager/CPT/CPT_Registry.php:57
+msgid "New Show"
+msgstr "Új előadás"
+
+#: src/GigManager/CPT/CPT_Registry.php:58
+msgid "View Show"
+msgstr "Előadás megtekintése"
+
+#: src/GigManager/CPT/CPT_Registry.php:59
+msgid "Search Shows"
+msgstr "Előadás keresése"
+
+#: src/GigManager/CPT/CPT_Registry.php:60
+msgid "No shows found."
+msgstr "Nincs ilyen előadás."
+
+#: src/GigManager/CPT/CPT_Registry.php:61
+msgid "No shows found in Trash."
+msgstr "Nincs ilyen előadás a lomtárban."
+
+#: src/GigManager/CPT/CPT_Registry.php:96
+msgctxt "post type general name"
+msgid "Artists"
+msgstr "Előadók"
+
+#: src/GigManager/CPT/CPT_Registry.php:97
+msgctxt "post type singular name"
+msgid "Artist"
+msgstr "Előadó"
+
+#: src/GigManager/CPT/CPT_Registry.php:99
+msgid "Add New Artist"
+msgstr "Új előadó hozzáadása"
+
+#: src/GigManager/CPT/CPT_Registry.php:100
+msgid "Edit Artist"
+msgstr "Előadó szerkesztése"
+
+#: src/GigManager/CPT/CPT_Registry.php:101
+msgid "New Artist"
+msgstr "Új előadó"
+
+#: src/GigManager/CPT/CPT_Registry.php:102
+msgid "Search Artists"
+msgstr "Előadó keresése"
+
+#: src/GigManager/CPT/CPT_Registry.php:103
+msgid "No artists found."
+msgstr "Nincs ilyen előadó."
+
+#: src/GigManager/CPT/CPT_Registry.php:104
+msgid "No artists found in Trash."
+msgstr "Nincs ilyen előadó a lomtárban."
+
+#: src/GigManager/CPT/CPT_Registry.php:134
+msgctxt "post type general name"
+msgid "Venues"
+msgstr "Helyszínek"
+
+#: src/GigManager/CPT/CPT_Registry.php:135
+msgctxt "post type singular name"
+msgid "Venue"
+msgstr "Helyszín"
+
+#: src/GigManager/CPT/CPT_Registry.php:137
+msgid "Add New Venue"
+msgstr "Új helyszín hozzáadása"
+
+#: src/GigManager/CPT/CPT_Registry.php:138
+msgid "Edit Venue"
+msgstr "Helyszín szerkesztése"
+
+#: src/GigManager/CPT/CPT_Registry.php:139
+msgid "New Venue"
+msgstr "Új helyszín"
+
+#: src/GigManager/CPT/CPT_Registry.php:140
+msgid "Search Venues"
+msgstr "Helyszín keresése"
+
+#: src/GigManager/CPT/CPT_Registry.php:141
+msgid "No venues found."
+msgstr "Nincs ilyen helyszín."
+
+#: src/GigManager/CPT/CPT_Registry.php:142
+msgid "No venues found in Trash."
+msgstr "Nincs ilyen helyszín a lomtárban."
+
+#: src/GigManager/CPT/CPT_Registry.php:172
+msgctxt "post type general name"
+msgid "Tours"
+msgstr "Turnék"
+
+#: src/GigManager/CPT/CPT_Registry.php:173
+msgctxt "post type singular name"
+msgid "Tour"
+msgstr "Turné"
+
+#: src/GigManager/CPT/CPT_Registry.php:175
+msgid "Add New Tour"
+msgstr "Új túrné hozzáadása"
+
+#: src/GigManager/CPT/CPT_Registry.php:176
+msgid "Edit Tour"
+msgstr "Turné szerkesztése"
+
+#: src/GigManager/CPT/CPT_Registry.php:177
+msgid "New Tour"
+msgstr "Új túrné"
+
+#: src/GigManager/CPT/CPT_Registry.php:178
+msgid "Search Tours"
+msgstr "Turné keresése"
+
+#: src/GigManager/CPT/CPT_Registry.php:179
+msgid "No tours found."
+msgstr "Nincs ilyen turné."
+
+#: src/GigManager/CPT/CPT_Registry.php:180
+msgid "No tours found in Trash."
+msgstr "Nincs ilyen turné a lomtárban."
+
+#: src/GigManager/Import/Abstract_Importer.php:68
+msgid "Could not open the CSV file."
+msgstr "A CSV fájlt nem lehetett megnyitni."
+
+#: src/GigManager/Import/Abstract_Importer.php:88
+msgid "Could not read CSV headers."
+msgstr "A CSV fejlécek nem olvashatóak."
+
+#. translators: %s: comma-separated list of missing column names
+#: src/GigManager/Import/Abstract_Importer.php:107
+#, php-format
+msgid "Missing required columns: %s"
+msgstr "Hiányzó kötelező oszlopok: %s"
+
+#: src/GigManager/Import/Abstract_Importer.php:144
+msgid "Unknown error."
+msgstr "Ismeretlen hiba."
+
+#: src/GigManager/Import/Artist_Importer.php:32
+#: src/GigManager/Import/Tour_Importer.php:32
+#: src/GigManager/Import/Venue_Importer.php:33
+msgid "Missing required field: name."
+msgstr "Hiányzó kötelező mező: név."
+
+#: src/GigManager/Import/Artist_Importer.php:71
+msgid "Failed to create artist."
+msgstr "Az előadó létrehozása sikertelen."
+
+#: src/GigManager/Import/Show_Importer.php:44
+msgid "Missing required field: date."
+msgstr "Hiányzó kötelező mező: dátum."
+
+#: src/GigManager/Import/Show_Importer.php:51
+msgid "Invalid date format. Expected YYYY-MM-DD."
+msgstr "Érvénytelen dátumformátum. A várt formátum: ÉÉÉÉ-HH-NN."
+
+#: src/GigManager/Import/Show_Importer.php:58
+msgid "Missing required field: artist_slug."
+msgstr "Hiányzó kötelező mező: artist_slug."
+
+#. translators: %s: artist slug
+#: src/GigManager/Import/Show_Importer.php:70
+#, php-format
+msgid "Artist slug \"%s\" not found — import artists first."
+msgstr ""
+"Az \"%s\" előadó slug nem található — először a művészeket kell importálni."
+
+#. translators: %1$s: venue name, %2$s: venue city
+#: src/GigManager/Import/Show_Importer.php:89
+#, php-format
+msgid "Venue \"%1$s\" in \"%2$s\" not found — import venues first."
+msgstr ""
+"\"%s\" helyszín a \"%2$s\" településen nem található — először a "
+"helyszíneket kell importálni."
+
+#. translators: %s: tour slug
+#: src/GigManager/Import/Show_Importer.php:109
+#, php-format
+msgid "Tour slug \"%s\" not found — import tours first."
+msgstr ""
+"Az \"%s\" turné slug nem található — először a turnékat kell importálni."
+
+#: src/GigManager/Import/Show_Importer.php:162
+msgid "Failed to create show."
+msgstr "Az előadás létrehozása sikertelen."
+
+#: src/GigManager/Import/Tour_Importer.php:68
+msgid "Failed to create tour."
+msgstr "A turné létrehozása sikertelen."
+
+#: src/GigManager/Import/Venue_Importer.php:40
+msgid "Missing required field: city."
+msgstr "Hiányzó kötelező mező: város."
+
+#: src/GigManager/Import/Venue_Importer.php:84
+msgid "Failed to create venue."
+msgstr "A helyszín létrehozása sikertelen."
+
+#: src/GigManager/Meta/Artist_Meta.php:63
+msgid "Artist Details"
+msgstr "Előadó részletei"
+
+#: src/GigManager/Meta/Artist_Meta.php:90
+#: src/GigManager/Meta/Venue_Meta.php:194
+msgid "Website URL"
+msgstr "Honlap URL"
+
+#: src/GigManager/Meta/Show_Meta.php:66
+msgid "Show Details"
+msgstr "Előadás részletei"
+
+#: src/GigManager/Meta/Show_Meta.php:146 templates/classic.php:39
+#: templates/table.php:39
+msgid "Date"
+msgstr "Dátum"
+
+#: src/GigManager/Meta/Show_Meta.php:148 src/GigManager/Meta/Show_Meta.php:181
+#: src/GigManager/Meta/Venue_Meta.php:113
+msgid "Required"
+msgstr "Kötelező"
+
+#: src/GigManager/Meta/Show_Meta.php:186
+msgid "— Select Artist —"
+msgstr "— Válasszunk előadót —"
+
+#: src/GigManager/Meta/Show_Meta.php:195 src/GigManager/Meta/Show_Meta.php:235
+#: src/GigManager/Meta/Show_Meta.php:268
+msgid "Your default — change or clear."
+msgstr "Alapértelmezett érték — változtassuk meg vagy töröljük."
+
+#. translators: 1: Opening tag and URL to add new artist, 2: Closing tag
+#: src/GigManager/Meta/Show_Meta.php:202
+#, php-format
+msgid "No artists found. %1$sAdd an artist%2$s first."
+msgstr "Nem található előadó. Először %1$shozzunk létre egy előadót%2$s."
+
+#: src/GigManager/Meta/Show_Meta.php:219
+msgid "— Select Venue —"
+msgstr "— Válasszunk helyszínt —"
+
+#. translators: 1: Opening tag and URL to add new venue, 2: Closing tag
+#: src/GigManager/Meta/Show_Meta.php:242
+#, php-format
+msgid "No venues found. %1$sAdd a venue%2$s first."
+msgstr "Nem található helyszín. Először %1$shozzunk létre egy helyszínt%2$s."
+
+#: src/GigManager/Meta/Show_Meta.php:259
+msgid "— Select Tour —"
+msgstr "— Válasszunk turnét —"
+
+#: src/GigManager/Meta/Show_Meta.php:275
+msgid "Show Status"
+msgstr "Előadás státusza"
+
+#: src/GigManager/Meta/Show_Meta.php:281
+msgid "— None —"
+msgstr "— Semmi —"
+
+#: src/GigManager/Meta/Show_Meta.php:295
+msgid "Price"
+msgstr "Ár"
+
+#: src/GigManager/Meta/Show_Meta.php:305
+msgid "e.g. $25, €15, Free"
+msgstr "például 25000 Ft, €15, ingyenes"
+
+#: src/GigManager/Meta/Show_Meta.php:312
+msgid "Ticket URL"
+msgstr "Jegyvásárlás URL"
+
+#: src/GigManager/Meta/Show_Meta.php:329
+msgid "Ticket Phone"
+msgstr "Jegyvásárlás telefonszám"
+
+#: src/GigManager/Meta/Show_Meta.php:345
+msgid "External URL"
+msgstr "Külső URL"
+
+#: src/GigManager/Meta/Show_Meta.php:362
+msgid "Notes"
+msgstr "Jegyzetek"
+
+#: src/GigManager/Meta/Show_Meta.php:373
+msgid "Plain text only."
+msgstr "Csak egyszerű szöveg."
+
+#: src/GigManager/Meta/Venue_Meta.php:63
+msgid "Venue Details"
+msgstr "Helyszín részletei"
+
+#: src/GigManager/Meta/Venue_Meta.php:96
+msgid "Address"
+msgstr "Cím"
+
+#: src/GigManager/Meta/Venue_Meta.php:130
+msgid "State / Province"
+msgstr "Tagállam / Tartomány"
+
+#: src/GigManager/Meta/Venue_Meta.php:146
+msgid "Postal Code"
+msgstr "Irányítószám"
+
+#: src/GigManager/Meta/Venue_Meta.php:162 templates/classic.php:44
+#: templates/table.php:47
+msgid "Country"
+msgstr "Ország"
+
+#: src/GigManager/Shortcode/Shows.php:383
+msgid "No past shows."
+msgstr "Nincsenek korábbi előadások."
+
+#: src/GigManager/Shortcode/Shows.php:385
+msgid "No upcoming shows."
+msgstr "Nincsenek közelgő előadások."
+
+#: src/GigManager/Shortcode/Shows.php:485
+msgid "Show"
+msgstr "Előadás"
+
+#: src/GigManager/Shortcode/Shows.php:490
+#: src/GigManager/Widget/Upcoming_Shows.php:100
+msgid "Buy Tickets"
+msgstr "Jegyvásárlás"
+
+#: src/GigManager/Shortcode/Shows.php:491
+msgid "More Info"
+msgstr "További információ"
+
+#: src/GigManager/Widget/Upcoming_Shows.php:28
+msgid "GigManager — Upcoming Shows"
+msgstr "GigManager — Közelgő előadások"
+
+#: src/GigManager/Widget/Upcoming_Shows.php:30
+msgid "Displays a list of upcoming shows."
+msgstr "Megjeleníti a közelgő előadások listáját."
+
+#: src/GigManager/Widget/Upcoming_Shows.php:61
+#: src/GigManager/Widget/Upcoming_Shows.php:250
+msgid "Upcoming Shows"
+msgstr "Közelgő előadások"
+
+#: src/GigManager/Widget/Upcoming_Shows.php:111
+msgid "Upcoming shows"
+msgstr "Közelgő előadások"
+
+#: src/GigManager/Widget/Upcoming_Shows.php:257
+msgid "Title:"
+msgstr "Cím:"
+
+#: src/GigManager/Widget/Upcoming_Shows.php:269
+msgid "Number of shows to display:"
+msgstr "A megjelenítendő előadások száma:"
+
+#: src/GigManager/Widget/Upcoming_Shows.php:284
+msgid "Link text:"
+msgstr "Hivatkozás szövege:"
+
+#: src/GigManager/Widget/Upcoming_Shows.php:294
+msgid ""
+"This phrase is used to link to the page specified in your GigManager "
+"settings. (Leave blank to disable this link.)"
+msgstr ""
+"Ez a kifejezés a GigManager beállításaiban megadott oldalra mutat. (Hagyjuk "
+"üresen a link kikapcsolásához.)"
+
+#: templates/classic.php:106
+msgid "Time:"
+msgstr "Időpont:"
+
+#: templates/classic.php:110
+msgid "Admission:"
+msgstr "Belépődíj:"
+
+#: templates/classic.php:114
+msgid "Box office:"
+msgstr "Jegyiroda:"
+
+#: templates/classic.php:118
+msgid "Address:"
+msgstr "Cím:"
+
+#: templates/classic.php:122
+msgid "Venue phone:"
+msgstr "Helyszín telefonszáma:"
+
+#: templates/table.php:53
+msgid "Actions"
+msgstr "Műveletek"
