@@ -137,6 +137,7 @@ class Plugin {
 		( new Admin\Settings() )->hook();
 		( new Admin\Import_Export() )->hook();
 		( new Shortcode\Shows() )->hook();
+		( new Feed\Feeds() )->hook();
 		( new Admin\Onboarding() )->hook();
 		( new Admin\Dashboard_Widget() )->hook();
 		add_action( 'widgets_init', [ Widget\Upcoming_Shows::class, 'register' ] );
