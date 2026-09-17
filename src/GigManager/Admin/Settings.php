@@ -108,6 +108,10 @@ class Settings {
 			$options['venue_link'] = 'yes' === $input['venue_link'] ? 'yes' : 'no';
 		}
 
+		if ( isset( $input['show_feed_links'] ) ) {
+			$options['show_feed_links'] = 'yes' === $input['show_feed_links'] ? 'yes' : 'no';
+		}
+
 		if ( isset( $input['sticky_defaults'] ) ) {
 			$options['sticky_defaults'] = 'yes' === $input['sticky_defaults'] ? 'yes' : 'no';
 		}
@@ -222,6 +226,7 @@ class Settings {
 		$display_country = Options::get( 'display_country' );
 		$artist_link     = Options::get( 'artist_link' );
 		$venue_link      = Options::get( 'venue_link' );
+		$show_feed_links = Options::get( 'show_feed_links' );
 		$sticky_defaults = Options::get( 'sticky_defaults' );
 
 		$name_prefix = Options::OPTION_KEY;
@@ -313,6 +318,28 @@ class Settings {
 						       value="no" <?php checked( $venue_link, 'no' ); ?> />
 						<?php esc_html_e( 'No', 'gigmanager' ); ?>
 					</label>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row">
+					<?php esc_html_e( 'Show Feed Links', 'gigmanager' ); ?>
+				</th>
+				<td>
+					<label>
+						<input type="radio"
+						       name="<?php echo esc_attr( $name_prefix . '[show_feed_links]' ); ?>"
+						       value="yes" <?php checked( $show_feed_links, 'yes' ); ?> />
+						<?php esc_html_e( 'Yes', 'gigmanager' ); ?>
+					</label>
+					<label style="margin-left: 16px;">
+						<input type="radio"
+						       name="<?php echo esc_attr( $name_prefix . '[show_feed_links]' ); ?>"
+						       value="no" <?php checked( $show_feed_links, 'no' ); ?> />
+						<?php esc_html_e( 'No', 'gigmanager' ); ?>
+					</label>
+					<p class="description">
+						<?php esc_html_e( 'Display "RSS | iCal" links below your show listings so fans can subscribe to your dates.', 'gigmanager' ); ?>
+					</p>
 				</td>
 			</tr>
 			<tr>
