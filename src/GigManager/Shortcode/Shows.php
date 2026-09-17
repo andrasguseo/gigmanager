@@ -2,10 +2,10 @@
 
 namespace AGU\GigManager\Shortcode;
 
-use AGU\GigManager\Meta\Show_Meta;
+use AGU\GigManager\Feed\Feeds;
 use AGU\GigManager\Options;
+use AGU\GigManager\Query\Show_Query;
 use AGU\GigManager\Template\Loader;
-use WP_Query;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -15,20 +15,6 @@ defined( 'ABSPATH' ) || exit;
  * @since 1.0.0
  */
 class Shows {
-
-	/**
-	 * Valid scopes and their default sort direction.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @var array<string, string>
-	 */
-	const SCOPE_DEFAULTS = [
-		'upcoming' => 'ASC',
-		'past'     => 'DESC',
-		'today'    => 'ASC',
-		'all'      => 'ASC',
-	];
 
 	/**
 	 * Whether the shortcode has been rendered in this request.
@@ -97,276 +83,66 @@ class Shows {
 		$limit    = $this->validate_limit( $atts['limit'] );
 		$template = $this->validate_template( $atts['template'] );
 
-		$query_args = $this->build_query_args( $scope, $sort, $limit, $atts['artist'] );
-		$query      = new WP_Query( $query_args );
+		$shows = ( new Show_Query() )->get_shows( $scope, $sort, $limit, $atts['artist'] );
 
 		if ( ! $this->enqueued ) {
 			wp_enqueue_style( 'gigmanager' );
 			$this->enqueued = true;
 		}
 
-		if ( ! $query->have_posts() ) {
+		if ( empty( $shows ) ) {
 			return $this->no_results_message( $scope );
 		}
 
-		$shows  = $this->prepare_show_data( $query );
 		$labels = $this->get_labels();
 
 		ob_start();
 		Loader::load( $template, [
-			'shows'  => $shows,
-			'scope'  => $scope,
-			'labels' => $labels,
+			'shows'      => $shows,
+			'scope'      => $scope,
+			'labels'     => $labels,
+			'feed_links' => $this->get_feed_links( $scope, $atts['artist'] ),
 		] );
 
 		return ob_get_clean();
 	}
 
 	/**
-	 * Build WP_Query arguments from shortcode parameters.
+	 * Build the RSS and iCal feed URLs for the current listing.
 	 *
-	 * @since 1.0.0
+	 * The feeds are filtered to match what the shortcode is displaying, so a
+	 * listing of one artist's past shows links to that same selection.
 	 *
-	 * @param string     $scope  The scope filter.
-	 * @param string     $sort   The sort direction.
-	 * @param int        $limit  Maximum number of shows (0 = no limit).
-	 * @param string|int $artist The artist filter (ID or slug).
+	 * Returns an empty array when the "Display Feed Links" setting is disabled,
+	 * which the feed-links template treats as "render nothing".
 	 *
-	 * @return array
+	 * @since 1.1.0
+	 *
+	 * @param string     $scope  The resolved scope.
+	 * @param string|int $artist The artist filter (ID or slug), or empty.
+	 *
+	 * @return array<string, string>
 	 */
-	protected function build_query_args( string $scope, string $sort, int $limit, $artist ): array {
-		$prefix = Show_Meta::META_PREFIX;
-		$today  = current_time( 'Y-m-d' );
+	protected function get_feed_links( string $scope, $artist ): array {
+		if ( 'yes' !== Options::get( 'show_feed_links' ) ) {
+			return [];
+		}
 
-		$args = [
-			'post_type'      => 'gigmanager_show',
-			'post_status'    => 'publish',
-			'posts_per_page' => $limit > 0 ? $limit : -1,
-			'meta_key'       => $prefix . 'date', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_key
-			'orderby'        => 'meta_value',
-			'order'          => $sort,
+		$args = [];
+
+		// "upcoming" is the feed default, so only pass a scope that differs.
+		if ( 'upcoming' !== $scope ) {
+			$args['scope'] = $scope;
+		}
+
+		if ( '' !== (string) $artist ) {
+			$args['artist'] = (string) $artist;
+		}
+
+		return [
+			'rss'  => Feeds::get_feed_url( Feeds::RSS_FEED, $args ),
+			'ical' => Feeds::get_feed_url( Feeds::ICAL_FEED, $args ),
 		];
-
-		// Scope-based date filtering.
-		$meta_query = [];
-
-		switch ( $scope ) {
-			case 'upcoming':
-				$meta_query[] = [
-					'key'     => $prefix . 'date',
-					'value'   => $today,
-					'compare' => '>=',
-					'type'    => 'DATE',
-				];
-				break;
-
-			case 'past':
-				$meta_query[] = [
-					'key'     => $prefix . 'date',
-					'value'   => $today,
-					'compare' => '<',
-					'type'    => 'DATE',
-				];
-				break;
-
-			case 'today':
-				$meta_query[] = [
-					'key'     => $prefix . 'date',
-					'value'   => $today,
-					'compare' => '=',
-					'type'    => 'DATE',
-				];
-				break;
-
-			// 'all' — no date filter.
-		}
-
-		// Artist filter.
-		if ( '' !== $artist ) {
-			$artist_id = $this->resolve_artist( $artist );
-			$meta_query[] = [
-				'key'   => $prefix . 'artist_id',
-				'value' => $artist_id,
-			];
-		}
-
-		if ( ! empty( $meta_query ) ) {
-			$args['meta_query'] = $meta_query; // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
-		}
-
-		return $args;
-	}
-
-	/**
-	 * Resolve an artist parameter to a post ID.
-	 *
-	 * Accepts a numeric ID or a post slug. Returns 0 if not found
-	 * (which will cause the query to return zero results).
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param string|int $artist The artist ID or slug.
-	 *
-	 * @return int
-	 */
-	protected function resolve_artist( $artist ): int {
-		if ( is_numeric( $artist ) ) {
-			$post = get_post( (int) $artist );
-			if ( $post && 'gigmanager_artist' === $post->post_type ) {
-				return $post->ID;
-			}
-
-			$this->debug_notice( sprintf( 'Artist ID "%d" not found.', (int) $artist ) );
-
-			return 0;
-		}
-
-		// Slug lookup.
-		$posts = get_posts( [
-			'post_type'      => 'gigmanager_artist',
-			'name'           => sanitize_title( $artist ),
-			'post_status'    => 'publish',
-			'posts_per_page' => 1,
-		] );
-
-		if ( ! empty( $posts ) ) {
-			return $posts[0]->ID;
-		}
-
-		$this->debug_notice( sprintf( 'Artist slug "%s" not found.', $artist ) );
-
-		return 0;
-	}
-
-	/**
-	 * Prepare an array of show data from a WP_Query result.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param WP_Query $query The query result.
-	 *
-	 * @return array
-	 */
-	protected function prepare_show_data( WP_Query $query ): array {
-		$prefix          = Show_Meta::META_PREFIX;
-		$display_country = Options::get( 'display_country' );
-		$artist_link     = Options::get( 'artist_link' );
-		$venue_link      = Options::get( 'venue_link' );
-
-		$shows = [];
-
-		while ( $query->have_posts() ) {
-			$query->the_post();
-			$post_id = get_the_ID();
-
-			$date        = get_post_meta( $post_id, $prefix . 'date', true );
-			$time        = get_post_meta( $post_id, $prefix . 'time', true );
-			$artist_id   = (int) get_post_meta( $post_id, $prefix . 'artist_id', true );
-			$venue_id    = (int) get_post_meta( $post_id, $prefix . 'venue_id', true );
-			$tour_id     = (int) get_post_meta( $post_id, $prefix . 'tour_id', true );
-			$show_status  = get_post_meta( $post_id, $prefix . 'show_status', true );
-			$price        = get_post_meta( $post_id, $prefix . 'price', true );
-			$ticket_url   = get_post_meta( $post_id, $prefix . 'ticket_url', true );
-			$ticket_phone = get_post_meta( $post_id, $prefix . 'ticket_phone', true );
-			$external_url = get_post_meta( $post_id, $prefix . 'external_url', true );
-			$notes        = get_post_meta( $post_id, $prefix . 'notes', true );
-
-			// Format date.
-			$formatted_date = '';
-			if ( $date ) {
-				$formatted_date = date_i18n( get_option( 'date_format' ), strtotime( $date ) );
-			}
-
-			// Format time.
-			$formatted_time = '';
-			if ( $time ) {
-				$formatted_time = date_i18n( get_option( 'time_format' ), strtotime( '1970-01-01 ' . $time ) );
-			}
-
-			// Artist data.
-			$artist_name = '';
-			$artist_url  = '';
-			if ( $artist_id ) {
-				$artist_post = get_post( $artist_id );
-				if ( $artist_post ) {
-					$artist_name = $artist_post->post_title;
-					if ( 'yes' === $artist_link ) {
-						$artist_url = get_post_meta( $artist_id, $prefix . 'website_url', true );
-					}
-				}
-			}
-
-			// Venue data.
-			$venue_name        = '';
-			$venue_address     = '';
-			$venue_city        = '';
-			$venue_state       = '';
-			$venue_postal_code = '';
-			$venue_phone       = '';
-			$venue_country     = '';
-			$venue_url         = '';
-			if ( $venue_id ) {
-				$venue_post = get_post( $venue_id );
-				if ( $venue_post ) {
-					$venue_name        = $venue_post->post_title;
-					$venue_address     = get_post_meta( $venue_id, $prefix . 'address', true );
-					$venue_city        = get_post_meta( $venue_id, $prefix . 'city', true );
-					$venue_state       = get_post_meta( $venue_id, $prefix . 'state', true );
-					$venue_postal_code = get_post_meta( $venue_id, $prefix . 'postal_code', true );
-					$venue_phone       = get_post_meta( $venue_id, $prefix . 'phone', true );
-					if ( 'yes' === $display_country ) {
-						$venue_country = get_post_meta( $venue_id, $prefix . 'country', true );
-					}
-					if ( 'yes' === $venue_link ) {
-						$venue_url = get_post_meta( $venue_id, $prefix . 'website_url', true );
-					}
-				}
-			}
-
-			// Tour data.
-			$tour_name = '';
-			if ( $tour_id ) {
-				$tour_post = get_post( $tour_id );
-				if ( $tour_post ) {
-					$tour_name = $tour_post->post_title;
-				}
-			}
-
-			// Suppress ticket button for cancelled/sold-out shows.
-			$show_ticket_url = $ticket_url;
-			if ( in_array( $show_status, [ 'cancelled', 'sold_out' ], true ) ) {
-				$show_ticket_url = '';
-			}
-
-			$shows[] = [
-				'id'                => $post_id,
-				'date'              => $formatted_date,
-				'date_raw'          => $date,
-				'time'              => $formatted_time,
-				'time_raw'          => $time,
-				'artist_name'       => $artist_name,
-				'artist_url'        => $artist_url,
-				'venue_name'        => $venue_name,
-				'venue_address'     => $venue_address,
-				'venue_city'        => $venue_city,
-				'venue_state'       => $venue_state,
-				'venue_postal_code' => $venue_postal_code,
-				'venue_country'     => $venue_country,
-				'venue_phone'       => $venue_phone,
-				'venue_url'         => $venue_url,
-				'tour_name'         => $tour_name,
-				'show_status'       => $show_status,
-				'price'             => $price,
-				'ticket_url'        => $show_ticket_url,
-				'ticket_phone'      => $ticket_phone,
-				'external_url'      => $external_url,
-				'notes'             => $notes,
-			];
-		}
-
-		wp_reset_postdata();
-
-		return $shows;
 	}
 
 	/**
@@ -398,7 +174,7 @@ class Shows {
 	 * @return string
 	 */
 	protected function validate_scope( string $scope ): string {
-		if ( array_key_exists( $scope, self::SCOPE_DEFAULTS ) ) {
+		if ( array_key_exists( $scope, Show_Query::SCOPE_DEFAULTS ) ) {
 			return $scope;
 		}
 
@@ -419,7 +195,7 @@ class Shows {
 	 */
 	protected function validate_sort( string $sort, string $scope ): string {
 		if ( '' === $sort ) {
-			return self::SCOPE_DEFAULTS[ $scope ];
+			return Show_Query::SCOPE_DEFAULTS[ $scope ];
 		}
 
 		$sort = strtoupper( $sort );
@@ -430,7 +206,7 @@ class Shows {
 
 		$this->debug_notice( sprintf( 'Invalid sort "%s", falling back to scope default.', $sort ) );
 
-		return self::SCOPE_DEFAULTS[ $scope ];
+		return Show_Query::SCOPE_DEFAULTS[ $scope ];
 	}
 
 	/**

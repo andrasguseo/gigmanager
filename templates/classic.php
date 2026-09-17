@@ -7,9 +7,10 @@
  *
  * @since 1.0.0
  *
- * @var array  $shows  Array of show data.
- * @var string $scope  The current scope (upcoming, past, today, all).
- * @var array  $labels Labels from settings.
+ * @var array  $shows      Array of show data.
+ * @var string $scope      The current scope (upcoming, past, today, all).
+ * @var array  $labels     Labels from settings.
+ * @var array  $feed_links Feed URLs keyed by format ('rss', 'ical'); empty when disabled.
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -152,3 +153,4 @@ foreach ( $shows as $show ) {
 	<?php endforeach; ?>
 	</tbody>
 </table>
+<?php \AGU\GigManager\Template\Loader::load( 'feed-links', [ 'feed_links' => $feed_links ] ); ?>

@@ -1,3 +1,6 @@
 *.md
 
 vendor/
+tests/
+
+codeception.yml

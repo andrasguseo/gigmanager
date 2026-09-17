@@ -2,7 +2,7 @@
 /**
  * Plugin Name:         GigManager
  * Description:         Manage and display live music shows, artists, venues, and tours.
- * Version:             1.0.0
+ * Version:             1.1.0
  * Author:              Andras Guseo
  * Author URI:          https://andrasguseo.com
  * License:             GPLv2 or later
@@ -18,6 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 define( 'GIGMANAGER_FILE', __FILE__ );
+define( 'GIGMANAGER_VERSION', '1.1.0' );
 
 require_once 'src/functions/load.php';
 

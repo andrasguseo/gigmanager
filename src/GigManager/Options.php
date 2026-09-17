@@ -97,6 +97,7 @@ class Options {
 			'display_country'        => 'no',
 			'artist_link'            => 'yes',
 			'venue_link'             => 'yes',
+			'show_feed_links'        => 'yes',
 			'sticky_defaults'        => 'yes',
 
 			// Labels.
