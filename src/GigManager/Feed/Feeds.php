@@ -93,6 +93,32 @@ class Feeds {
 	}
 
 	/**
+	 * Build the public URL for one of the GigManager feeds.
+	 *
+	 * Uses get_feed_link() so both pretty (/feed/gigmanager-rss/) and plain
+	 * (?feed=gigmanager-rss) permalink structures are handled.
+	 *
+	 * @since 1.1.0
+	 *
+	 * @param string               $feed The feed name — self::RSS_FEED or self::ICAL_FEED.
+	 * @param array<string, mixed> $args Optional. Query arguments (scope, sort, limit, artist).
+	 *
+	 * @return string
+	 */
+	public static function get_feed_url( string $feed, array $args = [] ): string {
+		$url = get_feed_link( $feed );
+
+		$args = array_filter(
+			$args,
+			static function ( $value ) {
+				return '' !== $value && null !== $value;
+			}
+		);
+
+		return empty( $args ) ? $url : add_query_arg( $args, $url );
+	}
+
+	/**
 	 * Flag a rewrite-rule flush when the plugin version changes.
 	 *
 	 * The feed rewrite rules are added on `init`; when upgrading an existing
