@@ -2,6 +2,7 @@
 
 namespace AGU\GigManager\Shortcode;
 
+use AGU\GigManager\Feed\Feeds;
 use AGU\GigManager\Options;
 use AGU\GigManager\Query\Show_Query;
 use AGU\GigManager\Template\Loader;
@@ -97,12 +98,51 @@ class Shows {
 
 		ob_start();
 		Loader::load( $template, [
-			'shows'  => $shows,
-			'scope'  => $scope,
-			'labels' => $labels,
+			'shows'      => $shows,
+			'scope'      => $scope,
+			'labels'     => $labels,
+			'feed_links' => $this->get_feed_links( $scope, $atts['artist'] ),
 		] );
 
 		return ob_get_clean();
+	}
+
+	/**
+	 * Build the RSS and iCal feed URLs for the current listing.
+	 *
+	 * The feeds are filtered to match what the shortcode is displaying, so a
+	 * listing of one artist's past shows links to that same selection.
+	 *
+	 * Returns an empty array when the "Show Feed Links" setting is disabled,
+	 * which the feed-links template treats as "render nothing".
+	 *
+	 * @since 1.1.0
+	 *
+	 * @param string     $scope  The resolved scope.
+	 * @param string|int $artist The artist filter (ID or slug), or empty.
+	 *
+	 * @return array<string, string>
+	 */
+	protected function get_feed_links( string $scope, $artist ): array {
+		if ( 'yes' !== Options::get( 'show_feed_links' ) ) {
+			return [];
+		}
+
+		$args = [];
+
+		// "upcoming" is the feed default, so only pass a scope that differs.
+		if ( 'upcoming' !== $scope ) {
+			$args['scope'] = $scope;
+		}
+
+		if ( '' !== (string) $artist ) {
+			$args['artist'] = (string) $artist;
+		}
+
+		return [
+			'rss'  => Feeds::get_feed_url( Feeds::RSS_FEED, $args ),
+			'ical' => Feeds::get_feed_url( Feeds::ICAL_FEED, $args ),
+		];
 	}
 
 	/**
