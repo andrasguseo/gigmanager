@@ -24,6 +24,7 @@ The plugin uses native WordPress custom post types for Shows, Artists, Venues, a
 * **Shortcode** — Display upcoming, past, or all shows anywhere on your site with the `[gigmanager_shows]` shortcode.
 * **Three display templates** — Choose from list (card-style), table, or classic (two-row) layouts.
 * **Sidebar widget** — Show a compact list of upcoming shows in any widget area.
+* **RSS and iCal feeds** — Publish your shows as an RSS feed or a subscribable calendar (.ics) that fans can add to Google Calendar, Apple Calendar, or Outlook.
 * **Customize to your liking** — You can override any of the templates. Paste them into your theme's `gigmanager/` directory to customize the output.
 * **Customizable labels** — Rename "Show", "Artist", "Tour", and more from the settings page with ease.
 * **CSV import and export** — Bulk import artists, venues, tours, and shows via CSV. Export your data at any time.
@@ -77,6 +78,17 @@ Yes. You can create as many artists as you need and filter shows by artist using
 
 Yes. Use the built-in CSV export on one site and the CSV import on another to move your artists, venues, tours, and shows.
 
+= Do you offer RSS or calendar feeds? =
+
+Yes. GigManager publishes two feeds:
+
+* RSS: `https://your-site.com/feed/gigmanager-rss/`
+* iCal (.ics): `https://your-site.com/feed/gigmanager-ical/`
+
+Both accept the same filters as the shortcode via query parameters — `scope`, `artist`, `limit`, and `sort`. For example, upcoming shows for one artist as a calendar: `https://your-site.com/feed/gigmanager-ical/?artist=the-foo-bars`. Fans can subscribe to the iCal feed in Google Calendar, Apple Calendar, or Outlook to see your tour dates automatically.
+
+"RSS | iCal" links appear below your show listings by default, and inherit whatever filters the listing uses. You can turn them off with the "Show Feed Links" setting on the General tab. To restyle them, copy `templates/feed-links.php` into your theme's `gigmanager/` directory — all three display templates pull in that one file.
+
 == Screenshots ==
 
 1. Front-end display using the list template.
@@ -89,10 +101,20 @@ Yes. Use the built-in CSV export on one site and the CSV import on another to mo
 
 == Changelog ==
 
+= 1.1.0 =
+* Added an RSS feed of shows at `/feed/gigmanager-rss/`.
+* Added a subscribable iCal (.ics) feed of shows at `/feed/gigmanager-ical/`.
+* Both feeds support the same `scope`, `artist`, `limit`, and `sort` parameters as the shortcode.
+* Added "RSS | iCal" links below the show listings, matching the filters of the listing they appear under.
+* Added a "Show Feed Links" setting on the General tab to turn those links on or off.
+
 = 1.0.0 =
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.1.0 =
+Adds RSS and iCal feeds for your shows. Permalinks are refreshed automatically on upgrade.
 
 = 1.0.0 =
 Initial release of GigManager.
