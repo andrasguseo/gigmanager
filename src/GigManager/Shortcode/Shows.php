@@ -113,7 +113,7 @@ class Shows {
 	 * The feeds are filtered to match what the shortcode is displaying, so a
 	 * listing of one artist's past shows links to that same selection.
 	 *
-	 * Returns an empty array when the "Show Feed Links" setting is disabled,
+	 * Returns an empty array when the "Display Feed Links" setting is disabled,
 	 * which the feed-links template treats as "render nothing".
 	 *
 	 * @since 1.1.0

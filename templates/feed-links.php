@@ -11,7 +11,7 @@
  * @since 1.1.0
  *
  * @var array $feed_links Feed URLs keyed by format ('rss', 'ical'). Empty when
- *                        the "Show Feed Links" setting is disabled.
+ *                        the "Display Feed Links" setting is disabled.
  */
 
 defined( 'ABSPATH' ) || exit;

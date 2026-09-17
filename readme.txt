@@ -87,7 +87,7 @@ Yes. GigManager publishes two feeds:
 
 Both accept the same filters as the shortcode via query parameters — `scope`, `artist`, `limit`, and `sort`. For example, upcoming shows for one artist as a calendar: `https://your-site.com/feed/gigmanager-ical/?artist=the-foo-bars`. Fans can subscribe to the iCal feed in Google Calendar, Apple Calendar, or Outlook to see your tour dates automatically.
 
-"RSS | iCal" links appear below your show listings by default, and inherit whatever filters the listing uses. You can turn them off with the "Show Feed Links" setting on the General tab. To restyle them, copy `templates/feed-links.php` into your theme's `gigmanager/` directory — all three display templates pull in that one file.
+"RSS | iCal" links appear below your show listings by default, and inherit whatever filters the listing uses. You can turn them off with the "Display Feed Links" setting on the General tab. To restyle them, copy `templates/feed-links.php` into your theme's `gigmanager/` directory — all three display templates pull in that one file.
 
 == Screenshots ==
 
@@ -106,7 +106,7 @@ Both accept the same filters as the shortcode via query parameters — `scope`, 
 * Feature - Add a subscribable iCal (.ics) feed of shows at `/feed/gigmanager-ical/`.
     * Both feeds support the same `scope`, `artist`, `limit`, and `sort` parameters as the shortcode.
 * Feature - Add "RSS | iCal" links below the show listings, matching the filters of the listing they appear under.
-* Feature - Add a "Show Feed Links" setting on the General tab to turn those links on or off.
+* Feature - Add a "Display Feed Links" setting on the General tab to turn those links on or off.
 
 = [1.0.0] 2026-05-25 =
 * Initial release.
