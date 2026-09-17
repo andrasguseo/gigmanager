@@ -322,7 +322,7 @@ class Settings {
 			</tr>
 			<tr>
 				<th scope="row">
-					<?php esc_html_e( 'Show Feed Links', 'gigmanager' ); ?>
+					<?php esc_html_e( 'Display Feed Links', 'gigmanager' ); ?>
 				</th>
 				<td>
 					<label>
@@ -338,7 +338,7 @@ class Settings {
 						<?php esc_html_e( 'No', 'gigmanager' ); ?>
 					</label>
 					<p class="description">
-						<?php esc_html_e( 'Display "RSS | iCal" links below your show listings so fans can subscribe to your dates.', 'gigmanager' ); ?>
+						<?php esc_html_e( 'Display "RSS | iCal" links below your show listings so fans can add the dates to their calendar.', 'gigmanager' ); ?>
 					</p>
 				</td>
 			</tr>

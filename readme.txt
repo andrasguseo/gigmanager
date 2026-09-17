@@ -101,14 +101,14 @@ Both accept the same filters as the shortcode via query parameters — `scope`, 
 
 == Changelog ==
 
-= 1.1.0 =
-* Added an RSS feed of shows at `/feed/gigmanager-rss/`.
-* Added a subscribable iCal (.ics) feed of shows at `/feed/gigmanager-ical/`.
-* Both feeds support the same `scope`, `artist`, `limit`, and `sort` parameters as the shortcode.
-* Added "RSS | iCal" links below the show listings, matching the filters of the listing they appear under.
-* Added a "Show Feed Links" setting on the General tab to turn those links on or off.
+= [1.1.0] 2026-09-17 =
+* Feature - Add an RSS feed of shows at `/feed/gigmanager-rss/`.
+* Feature - Add a subscribable iCal (.ics) feed of shows at `/feed/gigmanager-ical/`.
+    * Both feeds support the same `scope`, `artist`, `limit`, and `sort` parameters as the shortcode.
+* Feature - Add "RSS | iCal" links below the show listings, matching the filters of the listing they appear under.
+* Feature - Add a "Show Feed Links" setting on the General tab to turn those links on or off.
 
-= 1.0.0 =
+= [1.0.0] 2026-05-25 =
 * Initial release.
 
 == Upgrade Notice ==
