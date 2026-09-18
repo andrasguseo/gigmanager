@@ -89,6 +89,10 @@ Both accept the same filters as the shortcode via query parameters — `scope`, 
 
 "RSS | iCal" links appear below your show listings by default, and inherit whatever filters the listing uses. You can turn them off with the "Display Feed Links" setting on the General tab. To restyle them, copy `templates/feed-links.php` into your theme's `gigmanager/` directory — all three display templates pull in that one file.
 
+= My feed links go to a 404 page. How do I fix it? =
+
+Go to **Settings → Permalinks** and click **Save Changes** without changing anything. That rebuilds WordPress's rewrite rules so the feed URLs resolve. You only need to do it once, after installing or updating the plugin.
+
 == Screenshots ==
 
 1. Front-end display using the list template.
@@ -114,7 +118,7 @@ Both accept the same filters as the shortcode via query parameters — `scope`, 
 == Upgrade Notice ==
 
 = 1.1.0 =
-Adds RSS and iCal feeds for your shows. Permalinks are refreshed automatically on upgrade.
+Adds RSS and iCal feeds for your shows. After updating, go to Settings → Permalinks and click Save Changes once, or the feed URLs will return a 404.
 
 = 1.0.0 =
 Initial release of GigManager.
